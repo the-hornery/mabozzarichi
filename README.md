@@ -1,2 +1,0 @@
-# mabozzarichi
-Mabozza Static Site
