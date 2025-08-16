@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta property="og:image" content="favicon.png" />
-  <meta property="og:title" content="Mabozza Richi @ The Hornery - Official Links" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+  
+  <!-- SEO / Social -->
   <title>Mabozza Richi @ The Hornery - Official Links</title>
+  <meta name="description" content="Western culture is spiralling back into puritanism. This album responds with satire, seduction, and barricade chants—Mabozza Richi's conceptual account of love, class, power, and pleasure." />
+  <meta property="og:title" content="Mabozza Richi @ The Hornery - Official Links" />
+  <meta property="og:description" content="A horny 3rd‑wave feminist crawling out of a well, dripping with irony and ready to spit about cartoons, capitalism, and carnal chaos. New album out now." />
+  <meta property="og:image" content="favicon.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <style>
+    :root {
+      --pink:#f84e9c;
+      --cream:#fef0d4;
+      --ink:#000;
+      --panel: rgba(0,0,0,0.7);
+      --chip:#c1387c;
+      --chip-hover:#9d2f64;
+      --accent:#ffd3bf;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
     body {
-      font-family: 'Staatliches', sans-serif;
-      background-color: #f84e9c;
-      color: #fef0d4;
+      font-family: 'Staatliches', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background-color: var(--pink);
+      color: var(--cream);
       margin: 0;
-      padding: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -24,76 +39,184 @@
       background-size: cover;
       background-position: center;
     }
+
     .container {
-      max-width: 700px;
+      width: 100%;
+      max-width: 860px;
       padding: 2rem;
-      text-align: center;
-      background-color: rgba(0, 0, 0, 0.7);
-      border-radius: 1rem;
       margin: 2rem;
+      background: var(--panel);
+      border-radius: 1rem;
+      text-align: center;
+      backdrop-filter: blur(2px);
     }
     .header-image {
       width: 100%;
-      max-width: 300px;
+      max-width: 320px;
       border-radius: 1rem;
-      margin-bottom: 1rem;
+      margin: 0 auto 1rem;
+      display: block;
     }
+
+    .section { 
+      margin: 1.75rem 0; 
+      text-align: left;
+    }
+    .section h2 {
+      margin: 0 0 0.5rem 0;
+      font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+      letter-spacing: 0.5px;
+    }
+    .sub {
+      color: var(--accent);
+      font-size: 0.95rem;
+      line-height: 1.2;
+      opacity: 0.9;
+    }
+
+    /* Album highlight */
+    .album {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      align-items: center;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 1rem;
+      padding: 1rem;
+    }
+    @media (min-width: 720px) {
+      .album { grid-template-columns: 180px 1fr; }
+    }
+    .album-art {
+      width: 100%;
+      max-width: 180px;
+      aspect-ratio: 1/1;
+      border-radius: 12px;
+      object-fit: cover;
+      margin: 0 auto;
+      display: block;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .album-copy h3 {
+      margin: 0 0 0.25rem 0;
+      font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+    }
+    .badge {
+      display: inline-block;
+      background: var(--chip);
+      padding: 0.35rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
+    }
+    .cta-row {
+      display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.75rem;
+    }
+    .cta {
+      display: inline-block;
+      padding: 0.7rem 0.9rem;
+      background: var(--chip);
+      color: #fff7e0;
+      text-decoration: none;
+      border-radius: 10px;
+      transition: background-color 0.2s ease;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .cta:hover { background: var(--chip-hover); }
+
+    /* Generic link buttons */
     .link {
       display: block;
-      margin: 0.75rem 0;
+      margin: 0.6rem 0;
       padding: 1rem;
-      background-color: #c1387c;
+      background-color: var(--chip);
       color: #fff7e0;
       text-decoration: none;
       border-radius: 8px;
       transition: background-color 0.2s ease;
     }
-    .link:hover {
-      background-color: #9d2f64;
-    }
-    iframe {
-      border-radius: 12px;
-      margin: 2rem 0;
-      width: 100%;
-      max-width: 100%;
-    }
-    .footer {
-      margin-top: 2rem;
-      font-size: 0.8rem;
-      color: #ffd3bf;
-    }
+    .link:hover { background-color: var(--chip-hover); }
+
+    iframe { border-radius: 12px; width: 100%; max-width: 100%; }
+    .stack { display: grid; gap: 0.75rem; }
+    .footer { margin-top: 2rem; font-size: 0.9rem; color: var(--accent); text-align: center; }
+
+    /* Small print paragraph styles for blurbs */
+    .copy { font-size: 1.02rem; line-height: 1.35; letter-spacing: 0.2px; }
   </style>
 </head>
 <body>
   <div class="container">
     <img class="header-image" src="mabozza.png" alt="Mabozza Richi" />
 
-    <iframe style="border-radius:12px" 
-      src="https://open.spotify.com/embed/artist/0sHCN8DB2pwLZ006nPfLYE?utm_source=generator" 
-      width="100%" height="152" frameBorder="0" 
-      allowfullscreen="" 
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-      loading="lazy">
-      </iframe>
+    <!-- ALBUM HIGHLIGHT -->
+    <section class="section" id="album">
+      <h2>NEW: Album Out Now</h2>
+      <div class="album">
+        <img class="album-art" src="album-art.png" alt="Album artwork" onerror="this.style.display='none'" />
+        <div class="album-copy">
+          <span class="badge">Concept • Satire • Bedroom-to-barricade</span>
+          <h3>Western puritanism is back. This is the counter‑spell.</h3>
+          <p class="copy">
+            Western culture is spiralling back into puritanism—clamping down on sexual expression, shaming sex workers, policing women’s choices, banning access to care. Meanwhile, predators thrive in silence, shielded by the same polite society that shuns open conversations about pleasure and consent. This album is not simply a collection of stories about finance, corruption, and sexual deviancy. It is a conceptual, metaphorical account of a man's internal war with love, class and power structures.
+          </p>
+          <div class="cta-row">
+            <a class="cta" href="https://open.spotify.com/artist/0sHCN8DB2pwLZ006nPfLYE?si=QtKCXYxCSCu-pgby4jARRA" target="_blank" rel="noopener">Listen on Spotify</a>
+            <a class="cta" href="https://music.apple.com/us/artist/mabozza-richi/1823069877" target="_blank" rel="noopener">Apple Music</a>
+            <a class="cta" href="https://listen.tidal.com/artist/62783163" target="_blank" rel="noopener">Tidal</a>
+            <a class="cta" href="https://www.youtube.com/@MabozzaRichi" target="_blank" rel="noopener">YouTube</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dGsvhfl4Jho?si=Px-QJJkx91oN7r59" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <!-- STREAMING WIDGETS -->
+    <section class="section" id="listen">
+      <h2>Stream / Watch</h2>
+      <div class="stack">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/0sHCN8DB2pwLZ006nPfLYE?utm_source=generator" height="152" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dGsvhfl4Jho?si=Px-QJJkx91oN7r59" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </section>
 
-    
+    <!-- MABOZZA BLURB -->
+    <section class="section" id="about">
+      <h2>Who is Mabozza?</h2>
+      <p class="copy">
+        <strong>Mabozza Blurb:</strong> Part burlesque MC, part radical armchair contrarian, part work-release stripper in a thrifted catsuit. Mabozza Richi is the sound of a horny 3rd wave feminist crawling out of a well, dripping with irony and ready to spit fire about cartoons, capitalism, and carnal chaos.
+      </p>
+      <p class="copy">
+        His genre-hopping tracks swing between seduction and scolding, between bedroom confession and barricade chant. Drawing from a long British tradition of truth-telling through absurdity, Mabozza’s mission is simple: call out the madness, kiss it on the forehead, and sleep with its mum.
+      </p>
+    </section>
 
-    <a class="link" href="https://suno.com/@mabozzarichi" target="_blank">Suno (Unmastered)</a>
-    <a class="link" href="https://open.spotify.com/artist/0sHCN8DB2pwLZ006nPfLYE?si=QtKCXYxCSCu-pgby4jARRA" target="_blank">Spotify</a>
-    <a class="link" href="https://listen.tidal.com/artist/62783163" target="_blank">Tidal</a>
-    <a class="link" href="https://music.apple.com/us/artist/mabozza-richi/1823069877" target="_blank">Apple Music</a>
-    <a class="link" href="https://www.instagram.com/mabozzarichi/" target="_blank">Instagram</a>
-    <a class="link" href="https://www.youtube.com/channel/UCEzYEPlCQFJQAFakQ85Xezw" target="_blank">YouTube Topic</a>
-    <a class="link" href="https://www.youtube.com/@MabozzaRichi" target="_blank">YouTube Channel</a>
-    <a class="link" href="https://www.tiktok.com/@mabozza.richi" target="_blank">TikTok</a>
-    <a class="link" href="https://www.facebook.com/mabozzarichi" target="_blank">Facebook</a>
-    
+    <!-- STUDIES / NOTION LINKS -->
+    <section class="section" id="studies">
+      <h2>Studies & Notes</h2>
+      <p class="sub">Context for the work: essays on sexuality, satire, and reading the uncomfortable mirror.</p>
+      <div class="stack">
+        <a class="link" href="https://resonant-trumpet-ade.notion.site/Hyper-sexuality-and-Music-24f50cee0517804982bff97818cefa61" target="_blank" rel="noopener">Hyper‑sexuality & Music (Notion)</a>
+        <a class="link" href="https://resonant-trumpet-ade.notion.site/Understanding-Satire-Subversion-and-the-Uncomfortable-Mirror-24f50cee051780fc947acb4957b6e86a" target="_blank" rel="noopener">Understanding Satire, Subversion & the Uncomfortable Mirror (Notion)</a>
+      </div>
+    </section>
 
-    <div class="footer">
-      Peace and love
-    </div>
+    <!-- SOCIAL / LINKS -->
+    <section class="section" id="links">
+      <h2>Follow / Links</h2>
+      <a class="link" href="https://suno.com/@mabozzarichi" target="_blank" rel="noopener">Suno (Unmastered)</a>
+      <a class="link" href="https://open.spotify.com/artist/0sHCN8DB2pwLZ006nPfLYE?si=QtKCXYxCSCu-pgby4jARRA" target="_blank" rel="noopener">Spotify</a>
+      <a class="link" href="https://listen.tidal.com/artist/62783163" target="_blank" rel="noopener">Tidal</a>
+      <a class="link" href="https://music.apple.com/us/artist/mabozza-richi/1823069877" target="_blank" rel="noopener">Apple Music</a>
+      <a class="link" href="https://www.instagram.com/mabozzarichi/" target="_blank" rel="noopener">Instagram</a>
+      <a class="link" href="https://www.youtube.com/channel/UCEzYEPlCQFJQAFakQ85Xezw" target="_blank" rel="noopener">YouTube Topic</a>
+      <a class="link" href="https://www.youtube.com/@MabozzaRichi" target="_blank" rel="noopener">YouTube Channel</a>
+      <a class="link" href="https://www.tiktok.com/@mabozza.richi" target="_blank" rel="noopener">TikTok</a>
+      <a class="link" href="https://www.facebook.com/mabozzarichi" target="_blank" rel="noopener">Facebook</a>
+    </section>
+
+    <div class="footer">Peace and love, MBR x</div>
   </div>
 </body>
 </html>
